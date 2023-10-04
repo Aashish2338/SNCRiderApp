@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.amsys.sncriderapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/favicon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/favicon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SNCRiderApp"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity android:name=".Activities.AnswerViewDetailsActivity" />
+        <activity android:name=".Activities.ViewAnswerDetailsActivity" />
+        <activity android:name=".Activities.RiderAddressDetailsActivity" />
+        <activity android:name=".Activities.CompleteOrderActivity" />
+        <activity android:name=".Activities.SeeDeviceDetailsActivity" />
+        <activity android:name=".Activities.MainCameraActivity" />
+        <activity android:name=".Activities.SilverFrameBezelActivity" />
+        <activity android:name=".Activities.BrandWarrantyUtilizedActivity" />
+        <activity android:name=".Activities.RepairDetailsActivity" />
+        <activity android:name=".Activities.FunctionalIssueActivity" />
+        <activity android:name=".Activities.AvailableAccessoriesActivity" />
+        <activity android:name=".Activities.DeviceDisplayTouchScreenActivity" />
+        <activity android:name=".Activities.DeviceBodyInformationActivity" />
+        <activity android:name=".Activities.DeviceConditionDetailsActivity" />
+        <activity android:name=".Activities.DeviceLeadDetailsActivity" />
+        <activity android:name=".Activities.UserProfileActivity" />
+        <activity android:name=".Activities.DeviceLeadsActivity" />
+        <activity android:name=".Activities.VerificationCodeActivity" />
+        <activity android:name=".Activities.DashboardActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.amsys.sncriderapp.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

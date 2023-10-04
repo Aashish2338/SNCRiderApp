@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#2f4fa7</color>
+    <color name="purple_500">#2f4fa7</color>
+    <color name="purple_700">#2f4fa7</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="teal_7000">#04BFBE</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    //color of xml
+    <color name="blueText">#06A3E7</color>
+    <color name="App_background">#FA7D10</color>
+    <color name="text_color">#5E5D5D</color>
+    <color name="textcolor">#8C8B8B</color>
+    <color name="Gainsboro">#DCDCDC</color>
+    <color name="colorPrimary">#ff0000</color>
+    <color name="colorPrimaryDark">#2f4fa7</color>
+    <color name="colorAccent">#3F51B5</color>
+    <color name="whiteDark">#F6F4F4</color>
+    <color name="whiteDarkf">#EDECEC</color>
+    <color name="app_colorblue">#B8EAFA</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="Chocolate">#F8FB3B3B</color>
+    <color name="togofogo_color">#AFF0FA</color>
+    <color name="red">#E14D63</color>
+    <color name="Red">#FF0000</color>
+    <color name="green">#C5F3FA</color>
+    <color name="greenF">#D2F6FB</color>
+    <color name="Blue">#F4AB74</color>
+    <color name="LightGreen1">#6BBA8C</color>
+    <color name="cardTextHdr">#F3FFF4</color>
+    <color name="edit">#55A3F4</color>
+    <color name="delete">#F54962</color>
+    <color name="share">#6ae9d9</color>
+    <color name="send">#FB5B4F</color>
+    <color name="blackText">#1C1C1C</color>
+</resources>

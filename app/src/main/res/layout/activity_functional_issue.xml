@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteDark"
+    tools:context=".Activities.FunctionalIssueActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarsIssue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/backIssueImg"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/back_arrow_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:text="Issue Details"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/viewAnswerBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="View Detail"
+                    android:textAlignment="gravity"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbarsIssue"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:padding="4dp"
+                android:text="Does your device have any functional issue?"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/volumeCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/volumeImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/volume_button_not_working" />
+
+                        <TextView
+                            android:id="@+id/volumeTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Volume button not working"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/powerCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/powerImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/power_button" />
+
+                        <TextView
+                            android:id="@+id/powerTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Power/Home Button faulty: Hard or not working"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/wifiCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/wifiImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/wifi" />
+
+                        <TextView
+                            android:id="@+id/wifiTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Wifi or Bluetooth Or GPS Not Working"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/chargingCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/chargingImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/charging_port" />
+
+                        <TextView
+                            android:id="@+id/chargingTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Charging Defect: Unable to charge the phone"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/batteryCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/batteryImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/battery_faulty" />
+
+                        <TextView
+                            android:id="@+id/batteryTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Battery Faulty or Very Low Battery Back up"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/speakerCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/speakerImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/speakers_not_working" />
+
+                        <TextView
+                            android:id="@+id/speakerTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Speaker not working: faulty Or cracked sound"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/microphoneCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/microphoneImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/microphone_not_working" />
+
+                        <TextView
+                            android:id="@+id/microphoneTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Microphone Not Working"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/gsmCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/gSMImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/call_function" />
+
+                        <TextView
+                            android:id="@+id/gSMTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="GSM(Call Function) is not-working normally"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/jackCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/earphoneImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/earphonejack" />
+
+                        <TextView
+                            android:id="@+id/earphoneTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Earphone Jack is damaged or not-working"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fingerPrintCard"
+                    android:layout_width="0dp"
+                    android:layout_height="175dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="6dp"
+                    android:layout_weight=".5"
+                    app:background="@color/whiteDark"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/fingerprintImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="top"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="fitXY"
+                        android:visibility="invisible"
+                        app:srcCompat="@drawable/check_mark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="110dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/fingerprint" />
+
+                        <TextView
+                            android:id="@+id/fingerprintTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="Fingerprint Sensor Not-working"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/skipIssueBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/login_button_bg"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Skip"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/continueIssueBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="16dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/login_button_bg"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Continue"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

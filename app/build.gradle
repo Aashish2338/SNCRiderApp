@@ -1,0 +1,102 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.amsys.sncriderapp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.amsys.sncriderapp"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        noCompress "mp3"
+        noCompress "mpeg"
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = true
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation("androidx.browser:browser:1.5.0") {
+        force = true
+    }
+
+    // library of retrofit for api.
+    implementation('com.squareup.retrofit2:retrofit:2.7.2') {
+        exclude module: 'okhttp'
+    }
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.7'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.6.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    // RxJava
+//     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
+//     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+//     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+
+//    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+//    implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
+//    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+    //retrofit
+//    implementation 'com.google.code.gson:gson:2.8.9'
+//    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //glide
+//    implementation 'com.github.bumptech.glide:glide:4.12.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+//    implementation "com.squareup.picasso:picasso:2.8"
+//    implementation 'io.github.chaosleung:pinview:1.4.4'
+//    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+//    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+}
